@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template t-name="report_saleorder_document_loga">
-        <t t-call="sale_extension.external_layout_loga">
+        <t t-call="sale_extension_loga.external_layout_loga">
             <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
             <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                 <t t-if="doc.state not in ['draft','sent']">
@@ -130,7 +130,7 @@
                     <table class="table-sm">
                         <!-- Tax totals -->
                         <t t-set="tax_totals" t-value="json.loads(doc.tax_totals_json)"/>
-                        <t t-call="sale_extension.document_tax_totals_loga"/>
+                        <t t-call="sale_extension_loga.document_tax_totals_loga"/>
                     </table>
                 </div>
             </div>
@@ -215,10 +215,10 @@
     </t>
     </template>
 
-    <template id="sale_extension.report_saleorder_loga">
+    <template id="sale_extension_loga.report_saleorder_loga">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="sale_extension.report_saleorder_document_loga" t-lang="doc.partner_id.lang"/>
+                <t t-call="sale_extension_loga.report_saleorder_document_loga" t-lang="doc.partner_id.lang"/>
             </t>
         </t>
     </template>
@@ -244,7 +244,7 @@
                 </tr>
 
                 <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
-                <t t-call="sale_extension.tax_groups_totals_loga"/>
+                <t t-call="sale_extension_loga.tax_groups_totals_loga"/>
             </t>
 
             <t>
@@ -323,11 +323,11 @@
         </template>
 
     <report
-        id="sale_extension.report_saleorder_loga"
+        id="sale_extension_loga.report_saleorder_loga"
         string="Cotización"
         model="sale.order"
         report_type="qweb-pdf"
-        name="sale_extension.report_saleorder_loga"
-        file="sale_extension.report_saleorder_loga"/>
+        name="sale_extension_loga.report_saleorder_loga"
+        file="sale_extension_loga.report_saleorder_loga"/>
 
 </odoo>
