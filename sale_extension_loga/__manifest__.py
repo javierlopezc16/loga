@@ -11,7 +11,6 @@
     "depends": ["sale","account"],
     "data": [
         # Views
-        "views/sale_order.xml",
         "report/report_sale.xml",
         "report/external_layout.xml",
         "views/account_payment_term.xml"

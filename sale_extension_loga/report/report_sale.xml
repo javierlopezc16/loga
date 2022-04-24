@@ -63,8 +63,8 @@
                             <th class="text-right">Piso</th>
                             <th class="text-right">Orient.</th>
                             <th class="text-right">Útil</th>
-                            <th class="text-right">Terraza</th>
-                            <th class="text-right">Total</th>
+                            <!--<th class="text-right">Terraza</th>
+                            <th class="text-right">Total</th>-->
                             <th class="text-right">UF</th>
                             <th class="text-right">$</th>
                         </tr>
@@ -83,12 +83,12 @@
                                 <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
                                     <t t-if="not line.display_type">
                                         <td><span t-field="line.product_id"/></td>
-                                        <td><span t-field="line.product_type"/></td>
-                                        <td><span t-field="line.floor"/></td>
-                                        <td><span t-field="line.orientation"/></td>
-                                        <td><span t-field="line.useful"/></td>
-                                        <td><span t-field="line.terrace"/></td>
-                                        <td><span t-field="line.total_surface"/></td>
+                                        <td><span t-field="line.product_id.x_type_product"/></td>
+                                        <td><span t-field="line.product_id.x_floor"/></td>
+                                        <td><span t-field="line.product_id.x_orientation"/></td>
+                                        <td><span t-field="line.product_id.x_m2_product"/></td>
+                                        <!--<td><span t-field="line.terrace"/></td>
+                                        <td><span t-field="line.total_surface"/></td>-->
                                         <td class="text-right">
                                             <span t-field="line.price_unit"
                                             t-options='{"widget": "float", "precision": 2}'/>
