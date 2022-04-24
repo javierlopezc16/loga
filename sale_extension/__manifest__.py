@@ -8,10 +8,13 @@
     "summary": "Extensiones en el modulo sale",
     "support": "javierlopezc16@gmail.com",
     "category": "Sales",
-    "depends": ["sale"],
+    "depends": ["sale","account"],
     "data": [
         # Views
-        "views/sale_order.xml"
+        "views/sale_order.xml",
+        "report/report_sale.xml",
+        "report/external_layout.xml",
+        "views/account_payment_term.xml"
     ],
     "installable": True,
     "application": True,

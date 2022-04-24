@@ -12,6 +12,14 @@
              <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_uom_qty']" position="attributes">
                  <attribute name="invisible">1</attribute>
              </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='name']" position="after">
+                <field name="product_type"/>
+                <field name="floor"/>
+                <field name="orientation"/>
+                <field name="useful"/>
+                <field name="terrace"/>
+                <field name="total_surface"/>
+             </xpath>
         </field>
     </record>
 
