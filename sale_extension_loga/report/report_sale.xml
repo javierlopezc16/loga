@@ -159,6 +159,7 @@
 
 
             <tr class="border-black o_total">
+                <p style="page-break-before:always;"></p>
                 <td> <strong>Forma de Pago</strong></td>
             </tr>
             <div class="oe_structure"/>
