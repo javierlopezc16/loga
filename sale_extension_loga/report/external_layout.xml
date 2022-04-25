@@ -21,7 +21,7 @@
             </t>
         </t>
         <div class="header">
-            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="rounded float-right" style="max-height: 300px; line-height: 10%!important" alt="Logo"/><br/>
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="rounded float-right" style="max-height: 150px; line-height: 10%!important" alt="Logo"/><br/>
         </div>
         <t t-if="company.external_report_layout_id" t-call="{{company.external_report_layout_id.key}}"><t
                 t-raw="0"/></t>
