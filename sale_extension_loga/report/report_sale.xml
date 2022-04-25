@@ -65,8 +65,9 @@
                             <th class="text-right">Útil</th>
                             <!--<th class="text-right">Terraza</th>
                             <th class="text-right">Total</th>-->
+                            <th class="text-right">Impuestos</th>
                             <th class="text-right">UF</th>
-                            <th class="text-right">$</th>
+                            <!--<th class="text-right">$</th>-->
                         </tr>
                     </thead>
                     <tbody class="sale_tbody">
@@ -87,16 +88,17 @@
                                         <td><span t-field="line.product_id.x_floor"/></td>
                                         <td><span t-field="line.product_id.x_orientation"/></td>
                                         <td><span t-field="line.product_id.x_m2_product"/></td>
-                                        <!--<td><span t-field="line.terrace"/></td>
-                                        <td><span t-field="line.total_surface"/></td>-->
+                                        <td><span t-field="line.terrace"/></td>
+                                        <td><span t-field="line.total_surface"/></td>
+                                        <td><span t-field="line.tax_id"/></td>
                                         <td class="text-right">
                                             <span t-field="line.price_unit"
                                             t-options='{"widget": "float", "precision": 2}'/>
                                         </td>
-                                        <td class="text-right">
+                                        <!--<td class="text-right">
                                             <span t-esc="line.price_unit * line.currency_id.inverse_rate"
                                             t-options='{"widget": "float", "precision": 0}'/>
-                                        </td>
+                                        </td>-->
                                     </t>
                                     <t t-if="line.display_type == 'line_section'">
                                         <td colspan="99">
@@ -167,7 +169,7 @@
                             <th class="text-left">Concepto</th>
                             <th class="text-right">%</th>
                             <th class="text-right">Valor UF</th>
-                            <th class="text-right">Valor $</th>
+                            <!--<th class="text-right">Valor $</th>-->
 
                         </tr>
                     </thead>
@@ -191,10 +193,10 @@
                                             <span t-esc="amount_payable"
                                             t-options='{"widget": "float", "precision": 2}'/>
                                         </td>
-                                        <td class="text-right">
+                                        <!--<td class="text-right">
                                             <span t-esc="amount_payable_clp"
                                             t-options='{"widget": "float", "precision": 0}'/>
-                                        </td>
+                                        </td>-->
                                     </t>
                                 </tr>
 
@@ -262,10 +264,10 @@
                     <span t-esc="doc.amount_undiscounted"
                     t-options='{"widget": "float", "precision": 2}'/>
                 </td>
-                <td class="text-right">
+                <!--<td class="text-right">
                     <span t-esc="doc.amount_undiscounted * doc.pricelist_id.currency_id.inverse_rate"
                     t-options='{"widget": "float", "precision": 0}'/>
-                </td>
+                </td>-->
             </tr>
             <tr class="border-black o_total">
                 <td><strong>Descuento</strong></td>
@@ -273,10 +275,10 @@
                     <span t-esc="discount"
                     t-options='{"widget": "float", "precision": 2}'/>
                 </td>
-                <td class="text-right">
+                <!--<td class="text-right">
                     <span t-esc="discount * doc.amount_total"
                     t-options='{"widget": "float", "precision": 0}'/>
-                </td>
+                </td>-->
             </tr>
             <tr class="border-black o_total">
                 <td><strong>Total Precio Venta</strong></td>
@@ -284,10 +286,10 @@
                     <span t-esc="doc.amount_total"
                     t-options='{"widget": "float", "precision": 2}'/>
                 </td>
-                <td class="text-right">
+                <!--<td class="text-right">
                     <span t-esc="doc.amount_total * doc.pricelist_id.currency_id.inverse_rate"
                     t-options='{"widget": "float", "precision": 0}'/>
-                </td>
+                </td>-->
             </tr>
         </template>
 
@@ -324,7 +326,7 @@
 
     <report
         id="sale_extension_loga.report_saleorder_loga"
-        string="Cotización"
+        string="Cotización Loga"
         model="sale.order"
         report_type="qweb-pdf"
         name="sale_extension_loga.report_saleorder_loga"
